@@ -3,10 +3,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { AuthModule } from './auth/auth.module';
 import { NotesModule } from './notes/notes.module';
-import { Notes~Controller } from './clear/notes~/notes~.controller';
-import { NotesService } from './notes/notes.service';
-import { NotesModule } from './notes/notes.module';
-import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -20,10 +16,9 @@ import { AuthModule } from './auth/auth.module';
       autoLoadEntities: true,
       synchronize: true,
     }),
+
     AuthModule,
     NotesModule,
   ],
-  providers: [NotesService],
-  controllers: [Notes~Controller],
 })
 export class AppModule {}
